@@ -70,13 +70,5 @@ class GithubSpec extends WordSpecLike {
     "be set for Sebastian Weiland : weilands16" in assert(csv.entries("weilands16").nonEmpty)
   }
 
-  "github account" should {
-    "be reachable" in {
-      val baseUrl = "https://github.com/" + csv.entries("smithbob17")
-println(baseUrl)
-      println(new URL(baseUrl).getContent)
-    }
-  }
-
 
 }
