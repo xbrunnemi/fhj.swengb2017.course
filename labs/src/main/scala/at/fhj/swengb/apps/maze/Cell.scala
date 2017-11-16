@@ -44,7 +44,7 @@ case class Cell(pos: Pos
   val bottomCenter: Coord = Coord(topLeft.x + width / 2, topLeft.y + height)
   val leftCenter: Coord = Coord(topLeft.x, topLeft.y + height / 2)
 
-  val doorRect: Rect = Rect((topRight.x - topLeft.x) / 3, (bottomLeft.y - topLeft.y) / 3)
+  val doorRect: Rect = Rect((topRight.x - topLeft.x) / 4, (bottomLeft.y - topLeft.y) / 4)
 
   val upDoor = Door(up, topCenter, doorRect)
   val rightDoor = Door(right, rightCenter, doorRect)

@@ -1,5 +1,6 @@
 package at.fhj.swengb.apps.maze
 
+import at.fhj.swengb.apps.maze.jfx.{ClosedDoor, Door, OpenDoor}
 import org.scalatest.WordSpecLike
 
 class MazeSpec extends WordSpecLike {
@@ -18,5 +19,14 @@ class MazeSpec extends WordSpecLike {
         assert(MazeGenerator.gen(10, 10, Pos(0, 0), Pos(9, 9), Rect(10, 10)) != null)
       }
     }
+
+    /**
+      * Test door implementation
+      */
+    /*
+    "test open doors" in {
+
+    }
+    */
   }
 }

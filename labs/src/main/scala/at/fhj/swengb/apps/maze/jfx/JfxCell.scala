@@ -8,12 +8,16 @@ import at.fhj.swengb.apps.maze.{Cell, Coord}
 
 import scala.collection.JavaConverters._
 
+object Wall {
+
+  val Thickness = 15
+}
 
 case class Wall(c1: Coord, c2: Coord) extends Drawable {
 
   def draw: Shape = {
     val l = new Line(c1.x, c1.y, c2.x, c2.y)
-    l.setStrokeWidth(16)
+    l.setStrokeWidth(Wall.Thickness)
     l.setFill(Color.BLACK)
     l
   }

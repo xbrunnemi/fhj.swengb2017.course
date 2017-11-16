@@ -5,6 +5,9 @@ import at.fhj.swengb.apps.maze.jfx.{Door, Wall}
 import scala.util.Random
 
 
+/**
+  * A Mazegenerator creates a datastructure representing a random maze.
+  */
 object MazeGenerator {
 
   /**
@@ -26,11 +29,12 @@ object MazeGenerator {
     *
     * The idea is to start at the entry cell, walk in any direction
     *
-    * @param nrX   number of cells in x direction
-    * @param nrY   number of cells in y direction
-    * @param start entry cell of the maze
-    * @param exit  exit cell of the maze
-    * @return
+    * @param nrX      number of cells in x direction
+    * @param nrY      number of cells in y direction
+    * @param start    start / entry cell of the maze
+    * @param exit     exit cell of the maze
+    * @param cellRect size / region of a cell
+    * @return a random maze
     */
   def gen(nrX: Int, nrY: Int, start: Pos, exit: Pos, cellRect: Rect): Maze = {
     require(nrX > 0)
