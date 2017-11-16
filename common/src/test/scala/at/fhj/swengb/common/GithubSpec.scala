@@ -1,6 +1,5 @@
 package at.fhj.swengb.common
 
-import java.net.URL
 import java.nio.file.{Files, Path, Paths}
 
 import org.scalatest.WordSpecLike
@@ -18,11 +17,12 @@ class GithubSpec extends WordSpecLike {
   private val githubCsv: Path = basePath.resolve("src/main/resources/at/fhj/swengb/common/github.csv")
 
   println(githubCsv.toAbsolutePath.toString)
+
   // read and parse csv to a type
-  val csv = Csv(githubCsv)
+  val csv: Csv = Csv(githubCsv)
 
   "github.csv" should {
-    " exist" in assert(Files.exists(githubCsv))
+    "exist" in assert(Files.exists(githubCsv))
   }
   
   "github.csv: account is defined" should {
@@ -56,7 +56,6 @@ class GithubSpec extends WordSpecLike {
     "be set for Thomas Rinnhofer : rinnhofe15" in assert(csv.entries("rinnhofe15").nonEmpty)
     "be set for Benjamin Ruggenthaler : ruggenth15" in assert(csv.entries("ruggenth15").nonEmpty)
     "be set for Georg Schmitzer : schmitze16" in assert(csv.entries("schmitze16").nonEmpty)
-    "be set for Michael Schnedlitz : schnedli15" in assert(csv.entries("schnedli15").nonEmpty)
     "be set for Bob Smith : smithbob17" in assert(csv.entries("smithbob17").nonEmpty)
     "be set for Nikolaus Spieß : spiessni15" in assert(csv.entries("spiessni15").nonEmpty)
     "be set for Andreas Staudacher : staudach16" in assert(csv.entries("staudach16").nonEmpty)
