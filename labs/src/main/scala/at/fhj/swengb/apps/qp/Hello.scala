@@ -7,7 +7,7 @@ object Hello {
     println("Hello from mgrainer.")
     println("I bims da michi")
     println("Hi guys, lg babsy")
-    println("Hallo i bims da Franz")
+    println("Hallo i bims da Franz und ich liebe Sie")
   }
 
 }
