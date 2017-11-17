@@ -8,6 +8,7 @@ object Hello {
     println("I bims da michi")
     println("Hi guys, lg babsy")
     println("Hallo i bims da Franz und ich liebe Sie")
+    println("Guten Morgen, meine Damen und Herren - Martin")
   }
 
 }
