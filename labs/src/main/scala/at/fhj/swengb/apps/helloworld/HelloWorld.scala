@@ -6,6 +6,7 @@ object HelloWorld {
     println("Hallo wie geht es euch!")
     println("Gut danke!")
     println("Geht so")
+    println("könnt besser sein")
   }
 
 }
