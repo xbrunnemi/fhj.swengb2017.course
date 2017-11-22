@@ -29,8 +29,8 @@ object Maze {
 
 }
 
-case class Maze(nrX: Int
-                , nrY: Int
+case class Maze(sizeX: Int
+                , sizeY: Int
                 , start: Pos
                 , end: Pos
                 , grid: Array[Cell]
@@ -40,25 +40,19 @@ case class Maze(nrX: Int
 
   val cellWidth: Double = cellRect.width
   val cellHeight: Double = cellRect.height
-  val boundingBox: Rect = Rect(nrX * cellWidth, nrY * cellHeight)
+  val boundingBox: Rect = Rect(sizeX * cellWidth, sizeY * cellHeight)
 
-  val topBoundary: Set[Cell] = grid.slice(0, nrX).toSet
-  val downBoundary: Set[Cell] = grid.slice(grid.length - nrX, grid.length).toSet
+  val topBoundary: Set[Cell] = grid.slice(0, sizeX).toSet
+  val downBoundary: Set[Cell] = grid.slice(grid.length - sizeX, grid.length).toSet
 
-  val rightBoundary: Set[Cell] = (for (i <- (nrX - 1) until nrX * nrY by nrX) yield {
+  val rightBoundary: Set[Cell] = (for (i <- (sizeX - 1) until sizeX * sizeY by sizeX) yield {
     grid(i)
   }).toSet
-  val leftBoundary: Set[Cell] = (for (i <- 0 until nrX * nrY by nrX) yield grid(i)).toSet
+  val leftBoundary: Set[Cell] = (for (i <- 0 until sizeX * sizeY by sizeX) yield grid(i)).toSet
 
+  val boundaryCells: Set[Cell] = topBoundary ++ rightBoundary ++ downBoundary ++ leftBoundary
 
-
-  val boundaryCells: Set[Cell] =
-    topBoundary ++
-      rightBoundary ++
-      downBoundary ++
-      leftBoundary
-
-  def getCell(pos: Pos): Cell = grid(pos.x + pos.y * nrX)
+  def getCell(pos: Pos): Cell = grid(pos.gridIndex(sizeX))
 
 
 }

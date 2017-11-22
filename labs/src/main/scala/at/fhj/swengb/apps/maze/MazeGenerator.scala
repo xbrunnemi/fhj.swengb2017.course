@@ -4,7 +4,7 @@ import at.fhj.swengb.apps.maze.jfx.{Door, Wall}
 
 import scala.util.Random
 
-case class PosInt(value: Int) {
+case class PositiveInt(value: Int) {
   require(value > 0)
 }
 
@@ -41,10 +41,10 @@ object MazeGenerator {
     */
   @deprecated("use gen with typesafe signature", "20171117")
   def gen(sizeX: Int, sizeY: Int, start: Pos, exit: Pos, cellRect: Rect): Maze = {
-    gen(PosInt(sizeX), PosInt(sizeY), start, exit, cellRect)
+    gen(PositiveInt(sizeX), PositiveInt(sizeY), start, exit, cellRect)
   }
 
-  def gen(sizeX: PosInt, sizeY: PosInt, start: Pos, exit: Pos, cellRect: Rect): Maze = {
+  def gen(sizeX: PositiveInt, sizeY: PositiveInt, start: Pos, exit: Pos, cellRect: Rect): Maze = {
     require(0 <= start.x && start.x <= sizeX.value)
     require(0 <= start.y && start.y <= sizeY.value)
     require(0 <= exit.x && exit.x < sizeX.value)
